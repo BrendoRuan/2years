@@ -1,0 +1,180 @@
+<!-- =============== TELA DE LOADING =============== -->
+<div class="loading-wrapper" *ngIf="isLoading">
+  <div class="loading-card">
+    <p class="loading-message">
+      {{ loadingMessage }}
+    </p>
+
+    <div class="progress-bar">
+      <div class="progress-bar-fill" [style.width.%]="progress"></div>
+    </div>
+
+    <p class="loading-percent">
+      {{ progress }}%
+    </p>
+  </div>
+</div>
+
+<!-- =============== TELA HOME =============== -->
+<div class="home-page" *ngIf="!isLoading">
+  <main class="home-content">
+    <!-- ===== CARROSSEL TOPO ===== -->
+   <section class="hero-carousel">
+  <div class="slide-image-wrapper" (click)="abrirMidia(slides[slideAtual])">
+
+  <!-- BOTÃO ESQUERDA -->
+  <button class="nav-btn left" (click)="slideAnterior(); $event.stopPropagation()">
+    ‹
+  </button>
+
+  <!-- FOTO -->
+  <img
+    *ngIf="slides[slideAtual]?.tipo === 'foto'"
+    [src]="slides[slideAtual]?.url"
+  />
+
+  <!-- VIDEO -->
+  <video
+    *ngIf="slides[slideAtual]?.tipo === 'video'"
+    autoplay
+    muted
+    loop
+  >
+    <source [src]="slides[slideAtual]?.url" type="video/mp4" />
+  </video>
+
+  <!-- BOTÃO DIREITA -->
+  <button class="nav-btn right" (click)="proximoSlide(); $event.stopPropagation()">
+    ›
+  </button>
+
+  <div class="slide-overlay"></div>
+
+  <div class="slide-text">
+    <h2>{{ slides[slideAtual].titulo }}</h2>
+    <p>{{ slides[slideAtual].descricao }}</p>
+  </div>
+</div>
+</section>
+
+    <!-- ===== PONTUAÇÃO GERAL / RESUMO ===== -->
+    <section class="score-resume">
+      <p>
+        Pontuação atual:
+        <strong>{{ pontosUsuario }}</strong>
+        /
+        {{ pontosNecessarios }}
+      </p>
+    </section>
+
+    <!-- ===== BLOCOS PRINCIPAIS ===== -->
+    <section class="content-grid">
+      <!-- Bloco: Textos -->
+      <article class="card card-textos">
+        <h3>Textos</h3>
+        <p>
+          Aqui vão ficar as nossas cartas, textinhos, promessas e tudo que
+          a gente já escreveu um pro outro. 💌
+        </p>
+        <button (click)="irParaTextos()">
+          Ver nossos textos
+        </button>
+        <p class="hint">
+          Depois você pode trocar isso por uma lista de textos clicáveis.
+        </p>
+      </article>
+
+      <!-- Bloco: Imagens -->
+      <article class="card card-imagens">
+        <h3>Imagens</h3>
+        <p>
+          Esse espaço é para nossas fotos favoritas: sorrisos, caretas, viagens
+          e momentos aleatórios que viraram tudo. 📸
+        </p>
+        <button (click)="irParaGaleria()">
+          Ver galeria de fotos
+        </button>
+        <p class="hint">
+          Dá pra transformar isso em uma galeria depois.
+        </p>
+      </article>
+
+      <!-- Bloco: Nossa Trajetória -->
+      <article class="card card-trajetoria">
+        <h3>Nossa Trajetória</h3>
+        <p>
+          Aqui você vai acompanhar nossa história mês a mês, com fotos e um
+          mini-game no final de cada fase. 🗓️
+        </p>
+        <button
+          type="button"
+          class="btn-trajetoria"
+          (click)="abrirTrajetoriaPrimeiroMes()"
+        >
+          Ver trajetória do primeiro mês
+        </button>
+      </article>
+
+      <!-- ===== BLOCO SURPRESA (OCUPA A LINHA INTEIRA) ===== -->
+      <article
+        class="card card-surpresa"
+        [class.desbloqueado]="surpresaLiberada"
+      >
+        <!-- Estado: bloqueado -->
+        <div class="surpresa-content" *ngIf="!surpresaLiberada">
+          <div class="cadeado">🔒</div>
+          <h3>Surpresa</h3>
+          <p>
+            Essa surpresa ainda está bloqueada!
+            Continue juntando pontos para desbloquear 💜
+          </p>
+          <p class="hint">
+            Progresso:
+            {{ pontosUsuario }}
+            /
+            {{ pontosNecessarios }}
+          </p>
+        </div>
+
+        <!-- Estado: liberado -->
+        <div class="surpresa-content desbloqueada" *ngIf="surpresaLiberada">
+          <div class="cadeado aberto">🔓</div>
+          <h3>Surpresa Liberada!</h3>
+          <p>
+            Agora você pode abrir sua surpresa especial ✨
+          </p>
+          <p class="hint">
+            <button (click)="irParaSurpresa()">
+              Abrir surpresa
+            </button>
+          </p>
+        </div>
+      </article>
+    </section>
+  </main>
+</div>
+
+<!-- FULLSCREEN -->
+<div class="fullscreen" *ngIf="midiaAberta">
+
+  <!-- BOTÃO FECHAR -->
+  <span class="fechar" (click)="fecharMidia()">×</span>
+
+  <!-- FOTO -->
+  <img
+    *ngIf="midiaAberta.tipo === 'foto'"
+    [src]="midiaAberta.url"
+    class="fullscreen-media"
+  />
+
+  <!-- VIDEO -->
+  <video
+    *ngIf="midiaAberta.tipo === 'video'"
+    class="fullscreen-media"
+    controls
+    autoplay
+  >
+    <source [src]="midiaAberta.url" type="video/mp4" />
+  </video>
+
+</div>

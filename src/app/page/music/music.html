@@ -1,0 +1,80 @@
+<div class="music-player" [class.min]="minimizado">
+
+  <!-- BOTÃO MINIMIZAR -->
+  <button class="btn-toggle" (click)="toggleMinimizar()">
+    {{ minimizado ? '▶' : '◀' }}
+  </button>
+
+  <!-- CONTEÚDO DO PLAYER -->
+  <div class="player-content">
+
+    <!-- CAPA -->
+    <img
+      class="music-cover"
+      [src]="music.musicaAtual.capa"
+      [class.spin]="music.isPlaying()"
+    />
+
+    <!-- NOME DA MÚSICA -->
+    <div class="music-title">
+      {{ music.musicaAtual.nome }}
+    </div>
+
+    <!-- TEMPO -->
+    <div class="tempo">
+      {{ music.formatarTempo(music.tempoAtual) }} / {{ music.formatarTempo(music.duracao) }}
+    </div>
+
+    <!-- PROGRESSO -->
+    <input
+      type="range"
+      min="0"
+      max="100"
+      [value]="music.progresso"
+      (input)="music.seek($any($event.target).value)"
+      class="progress"
+    />
+
+    <!-- CONTROLES -->
+    <div class="controls">
+      <button (click)="music.anterior()">⏮</button>
+      <button (click)="music.toggle()">
+        {{ music.isPlaying() ? '⏸' : '▶' }}
+      </button>
+      <button (click)="music.proxima()">⏭</button>
+    </div>
+
+    <!-- VOLUME -->
+    <input
+      type="range"
+      min="0"
+      max="1"
+      step="0.1"
+      (input)="music.setVolume($any($event.target).value)"
+      class="volume"
+    />
+
+    <!-- BOTÃO PLAYLIST -->
+    <button class="btn-playlist" (click)="togglePlaylist()">
+      🎵 Playlist
+    </button>
+
+  </div>
+
+</div>
+
+<!-- PLAYLIST COMO OVERLAY -->
+<div class="playlist-overlay" [class.open]="playlistAberta">
+  <div class="playlist-content">
+    <div
+      class="music-item"
+      *ngFor="let m of music.playlist; let i = index"
+      [class.playing]="i === music.index"
+      (click)="tocarMusica(i)"
+    >
+      <img [src]="m.capa" />
+      <span>{{ m.nome }}</span>
+    </div>
+  </div>
+  <div class="playlist-backdrop" (click)="togglePlaylist()"></div>
+</div>

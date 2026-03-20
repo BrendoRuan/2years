@@ -1,0 +1,112 @@
+.galeria-page {
+  min-height: 100vh;
+  padding: 1.5rem 1.2rem 2.5rem;
+  background: radial-gradient(circle at top, #7b3cff 0, #2b1040 40%, #0d0217 100%);
+  color: #f5f5ff;
+}
+
+/* TOPO */
+.topo {
+  max-width: 960px;
+  margin: 0 auto 1.5rem;
+}
+
+.topo h1 {
+  font-size: 1.6rem;
+}
+
+.texto-topo {
+  font-size: 0.9rem;
+  color: #e6dcff;
+}
+
+.btn-voltar {
+  margin-bottom: 0.8rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid rgba(203, 177, 255, 0.5);
+  background: rgba(18, 4, 40, 0.9);
+  color: #f5f0ff;
+  cursor: pointer;
+}
+
+/* GRID */
+.fotos-grid {
+  max-width: 960px;
+  margin: 0 auto;
+  display: grid;
+  gap: 0.8rem;
+}
+
+@media (min-width: 600px) {
+  .fotos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .fotos-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* CARD */
+.foto-card {
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(18, 4, 40, 0.95);
+  border: 1px solid rgba(203, 177, 255, 0.4);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.foto-card:hover {
+  transform: translateY(-3px);
+}
+
+/* MIDIA */
+.foto-card img,
+.foto-card video {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.foto-card video {
+  background: black;
+}
+
+/* LEGENDA */
+.foto-card p {
+  font-size: 0.8rem;
+  padding: 0.5rem;
+}
+
+/* FULLSCREEN */
+.fullscreen {
+  position: fixed;
+  inset: 0;
+  background: black;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fullscreen-media {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.fechar {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}

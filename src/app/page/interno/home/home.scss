@@ -1,0 +1,516 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* ========= LOADING ========= */
+
+.loading-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at top, #7b3cff 0, #2b1040 40%, #0d0217 100%);
+  color: #f5f0ff;
+}
+
+.loading-card {
+  padding: 2rem 2.5rem;
+  border-radius: 20px;
+  background: rgba(18, 4, 40, 0.95);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(203, 177, 255, 0.4);
+  min-width: 280px;
+  max-width: 360px;
+  text-align: center;
+}
+
+.loading-message {
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+  color: #e9ddff;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(70, 40, 130, 0.6);
+  overflow: hidden;
+  margin-bottom: 0.7rem;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  width: 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #ff7bd5, #c26bff, #7a3cff);
+  transition: width 0.08s linear;
+}
+
+.loading-percent {
+  font-size: 0.85rem;
+  color: #cbb7ff;
+}
+
+/* ========= HOME ========= */
+
+.home-page {
+  min-height: 100vh;
+  padding: 1.5rem 1.2rem 2.5rem;
+  background: radial-gradient(circle at top, #7b3cff 0, #2b1040 40%, #0d0217 100%);
+  color: #f5f5ff;
+}
+
+/* ===== CARROSSEL ===== */
+
+.hero-carousel {
+  max-width: 960px;
+  margin: 0 auto 2rem auto;
+}
+
+.slide-image-wrapper {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+
+height: 60vh;
+
+  background: #160628;
+  cursor: pointer;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+/* FOTO */
+.slide-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+/* VIDEO */
+.slide-image-wrapper video {
+  width: 100%;
+  height: 100%;
+
+  /* 🔥 AQUI FOI O PROBLEMA */
+  object-fit: cover;
+
+  background: black;
+  transition: transform 0.3s ease;
+}
+
+/* 🔥 EFEITO ZOOM IGUAL TRAJETÓRIA */
+.slide-image-wrapper:hover img,
+.slide-image-wrapper:hover video {
+  transform: scale(1.05);
+}
+
+/* OVERLAY MAIS BONITO */
+.slide-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(13, 2, 23, 0.85),
+    rgba(13, 2, 23, 0.2)
+  );
+}
+
+/* TEXTO */
+.slide-text {
+  position: absolute;
+  left: 1.2rem;
+  bottom: 1rem;
+  right: 1.2rem;
+}
+
+.slide-text h2 {
+  font-size: 1.6rem;
+  margin-bottom: 0.3rem;
+}
+
+.slide-text p {
+  font-size: 0.9rem;
+  color: #e6dcff;
+}
+/* ===== FULLSCREEN ===== */
+
+.fullscreen {
+  position: fixed;
+  inset: 0;
+  background: black;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* mídia ocupa tudo */
+.fullscreen-media {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* 🔥 mostra tudo sem cortar */
+}
+
+/* botão fechar */
+.fechar {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+
+  font-size: 32px;
+  color: white;
+  cursor: pointer;
+
+  z-index: 10;
+}
+/* Controles do carrossel */
+.carousel-controls button {
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  cursor: pointer;
+
+  background: rgba(18, 4, 40, 0.9);
+  border: 1px solid rgba(203, 177, 255, 0.4);
+
+  color: #f5f0ff;
+  font-size: 1rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: 0.2s ease;
+}
+
+.carousel-controls button:hover {
+  transform: translateY(-2px);
+  background: rgba(124, 71, 255, 0.9);
+}
+/* BOTÕES DENTRO DO CARROSSEL */
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 40px;
+  height: 40px;
+
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(6px);
+
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 5;
+  transition: 0.2s;
+}
+
+.nav-btn:hover {
+  background: rgba(124, 71, 255, 0.8);
+}
+
+/* posições */
+.nav-btn.left {
+  left: 10px;
+}
+
+.nav-btn.right {
+  right: 10px;
+}
+/* ===== GRID DE BLOCOS ===== */
+
+.content-grid {
+  max-width: 960px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1.4rem;
+}
+
+/* 3 colunas no desktop */
+@media (min-width: 900px) {
+  .content-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.card {
+  padding: 1.4rem 1.2rem;
+  border-radius: 18px;
+  background: rgba(18, 4, 40, 0.96);
+  border: 1px solid rgba(203, 177, 255, 0.28);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.5);
+}
+
+.card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.6rem;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: #e6dcff;
+}
+
+.card .hint {
+  margin-top: 0.6rem;
+  font-size: 0.8rem;
+  color: #b6a1ff;
+}
+
+/* Cores diferentes por tipo */
+
+.card-textos {
+  border-color: rgba(255, 123, 213, 0.45);
+}
+
+.card-imagens {
+  border-color: rgba(124, 71, 255, 0.5);
+}
+
+.card-trajetoria {
+  border-color: rgba(194, 107, 255, 0.5);
+}
+
+/* ===== BLOCO SURPRESA – OCUPA A LINHA TODA ===== */
+
+.card-surpresa {
+  grid-column: 1 / -1; // ocupa todas as colunas da grid
+  text-align: center;
+  border-color: rgba(255, 215, 0, 0.45);
+  background: rgba(50, 20, 70, 0.95);
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+
+.card-surpresa.desbloqueado {
+  border-color: rgba(255, 230, 80, 0.85);
+  background: rgba(90, 40, 130, 0.98);
+  transform: translateY(-3px);
+  box-shadow: 0 14px 35px rgba(255, 220, 100, 0.4);
+}
+
+.surpresa-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.cadeado {
+  font-size: 2.2rem;
+  margin-bottom: 0.2rem;
+  opacity: 0.8;
+}
+
+.cadeado.aberto {
+  font-size: 2.4rem;
+  opacity: 1;
+}
+
+.card-surpresa p {
+  color: #f3e9ff;
+}
+
+.card-surpresa.desbloqueado p {
+  color: #fff7d6;
+}
+
+.card-surpresa .hint {
+  margin-top: 0.4rem;
+  font-size: 0.8rem;
+  color: #ceb8ff;
+}
+/* ===== MINI GAME NA TRAJETÓRIA ===== */
+
+.quiz-bloco {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px dashed rgba(203, 177, 255, 0.4);
+}
+
+.quiz-bloco h4 {
+  font-size: 1rem;
+  margin-bottom: 0.4rem;
+  color: #ffb7f0;
+}
+
+.quiz-pergunta {
+  font-size: 0.9rem;
+  margin-bottom: 0.7rem;
+  color: #f3e9ff;
+}
+
+.quiz-opcoes {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.quiz-opcao {
+  width: 100%;
+  padding: 0.6rem 0.7rem;
+  border-radius: 12px;
+  border: 1px solid rgba(203, 177, 255, 0.35);
+  background: rgba(22, 6, 48, 0.9);
+  color: #f7f1ff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: 0.2s ease;
+}
+
+.quiz-opcao:hover:not(:disabled) {
+  transform: translateY(-1px);
+  border-color: rgba(255, 183, 240, 0.8);
+  background: rgba(80, 40, 120, 0.95);
+}
+
+.quiz-opcao:disabled {
+  opacity: 0.7;
+  cursor: default;
+}
+
+.quiz-opcao.selecionada {
+  border-color: #ff7bd5;
+  box-shadow: 0 0 10px rgba(255, 123, 213, 0.7);
+}
+
+.quiz-texto {
+  text-align: left;
+}
+
+.quiz-pontos {
+  font-size: 0.75rem;
+  opacity: 0.9;
+  color: #ffd1ff;
+}
+
+.quiz-feedback {
+  margin-top: 0.6rem;
+  font-size: 0.85rem;
+  color: #c6ffb5;
+}
+/* ===== BOTÕES PADRÃO DOS CARDS ===== */
+
+.card button {
+  margin-top: 1rem;
+
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+
+  border-radius: 12px;
+  border: 1px solid rgba(203, 177, 255, 0.4);
+
+  background: linear-gradient(
+    135deg,
+    rgba(124, 71, 255, 0.25),
+    rgba(255, 123, 213, 0.25)
+  );
+
+  color: #f5f0ff;
+  font-size: 0.85rem;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  backdrop-filter: blur(6px);
+
+  transition: all 0.25s ease;
+}
+
+/* HOVER */
+.card button:hover {
+  transform: translateY(-2px) scale(1.01);
+
+  background: linear-gradient(
+    135deg,
+    rgba(124, 71, 255, 0.6),
+    rgba(255, 123, 213, 0.6)
+  );
+
+  border-color: rgba(255, 183, 240, 0.9);
+
+  box-shadow: 0 6px 18px rgba(124, 71, 255, 0.4);
+}
+
+/* CLICK */
+.card button:active {
+  transform: scale(0.97);
+}
+
+/* DESABILITADO */
+.card button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+/* TEXTOS */
+.card-textos button {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 123, 213, 0.3),
+    rgba(194, 107, 255, 0.3)
+  );
+}
+
+/* IMAGENS */
+.card-imagens button {
+  background: linear-gradient(
+    135deg,
+    rgba(124, 71, 255, 0.3),
+    rgba(80, 150, 255, 0.3)
+  );
+}
+
+/* TRAJETÓRIA */
+.card-trajetoria button {
+  background: linear-gradient(
+    135deg,
+    rgba(194, 107, 255, 0.3),
+    rgba(255, 200, 120, 0.3)
+  );
+}
+.card button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.card button:hover::after {
+  opacity: 1;
+}
+.card button {
+  position: relative;
+  overflow: hidden;
+}

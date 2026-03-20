@@ -1,0 +1,48 @@
+<div class="surpresa-page" [class.saindo]="saindo">
+
+      <audio #audioPlayer loop>
+    <source src="assets/music/Sonho - KHORUS - Bruno Duarte (youtube).mp3" type="audio/mpeg" />
+  </audio>
+
+<div class="slide-container">
+
+  <!-- FUNDO -->
+  <div class="background-blur">
+    <img *ngIf="slideAtual.tipo === 'foto'" [src]="slideAtual.url" />
+    <video *ngIf="slideAtual.tipo === 'video'" autoplay muted>
+      <source [src]="slideAtual.url" type="video/mp4" />
+    </video>
+  </div>
+
+  <!-- TELA CENTRAL -->
+  <div class="media-frame">
+    <img *ngIf="slideAtual.tipo === 'foto'" [src]="slideAtual.url" />
+    <video *ngIf="slideAtual.tipo === 'video'" autoplay muted>
+      <source [src]="slideAtual.url" type="video/mp4" />
+    </video>
+  </div>
+
+</div>
+
+  <!-- TEXTO FINAL -->
+  <div class="texto-final" *ngIf="mostrarTextoFinal">
+    <p>{{ textoAtual }}</p>
+  </div>
+
+  <!-- PEDIDO -->
+  <div class="pedido" *ngIf="mostrarPedido && !aceitouPedido">
+    <h2>Quer namorar comigo? 💜</h2>
+
+    <div class="botoes">
+      <button class="btn-sim" (click)="aceitou()">SIM 💚</button>
+      <button class="btn-nao" (mouseenter)="fugirBotao()">NÃO 😏</button>
+    </div>
+  </div>
+
+  <!-- RESPOSTA FINAL -->
+  <div class="resposta" *ngIf="aceitouPedido">
+<h1>Agora é oficial 💍💜</h1>
+<p>Você me fez a pessoa mais feliz do mundo... e isso é só o começo.</p>
+  </div>
+
+</div>

@@ -1,0 +1,63 @@
+<div class="galeria-page">
+
+  <!-- TOPO -->
+  <div class="topo">
+    <button class="btn-voltar" (click)="voltarHome()">← Voltar</button>
+
+    <h1>Nossa Galeria 📸</h1>
+    <p class="texto-topo">
+      Todos os nossos momentos guardados em um só lugar 💜
+    </p>
+  </div>
+
+  <!-- GRID -->
+  <div class="fotos-grid">
+
+    <div
+      class="foto-card"
+      *ngFor="let midia of midias"
+      (click)="abrirMidia(midia)"
+    >
+
+      <!-- FOTO -->
+      <img
+        *ngIf="midia.tipo === 'foto'"
+        [src]="midia.url"
+      />
+
+      <!-- VIDEO -->
+      <video
+        *ngIf="midia.tipo === 'video'"
+      >
+        <source [src]="midia.url" type="video/mp4" />
+      </video>
+
+      <p>{{ midia.legenda }}</p>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- FULLSCREEN -->
+<div class="fullscreen" *ngIf="midiaAberta">
+
+  <span class="fechar" (click)="fecharMidia()">×</span>
+
+  <img
+    *ngIf="midiaAberta.tipo === 'foto'"
+    [src]="midiaAberta.url"
+    class="fullscreen-media"
+  />
+
+  <video
+    *ngIf="midiaAberta.tipo === 'video'"
+    class="fullscreen-media"
+    controls
+    autoplay
+  >
+    <source [src]="midiaAberta.url" type="video/mp4" />
+  </video>
+
+</div>

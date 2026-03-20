@@ -1,0 +1,44 @@
+<div class="textos-page">
+
+  <!-- TOPO -->
+  <div class="topo">
+    <button class="btn-voltar" (click)="voltarHome()">← Voltar</button>
+
+    <h1>Nossos Textos 💌</h1>
+    <p class="texto-topo">
+      Cada palavra guarda um pedaço da nossa história 💜
+    </p>
+  </div>
+
+  <!-- GRID -->
+  <div class="textos-grid">
+
+    <div
+      class="texto-card"
+      *ngFor="let texto of textos"
+      (click)="abrirTexto(texto)"
+    >
+      <h3>{{ texto.titulo }}</h3>
+      <p class="preview">
+        {{ texto.conteudo | slice:0:100 }}...
+      </p>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- FULLSCREEN TEXTO -->
+<div class="fullscreen-texto" *ngIf="textoAberto">
+
+  <span class="fechar" (click)="fecharTexto()">×</span>
+
+  <div class="texto-container">
+    <h2>{{ textoAberto.titulo }}</h2>
+
+    <p>
+      {{ textoAberto.conteudo }}
+    </p>
+  </div>
+
+</div>

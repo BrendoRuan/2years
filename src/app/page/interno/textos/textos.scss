@@ -1,0 +1,163 @@
+.textos-page {
+  min-height: 100vh;
+  padding: 1.5rem 1.2rem 2.5rem;
+  background: radial-gradient(circle at top, #7b3cff 0, #2b1040 40%, #0d0217 100%);
+  color: #f5f5ff;
+}
+
+/* TOPO */
+.topo {
+  max-width: 960px;
+  margin: 0 auto 1.5rem;
+}
+
+/* GRID */
+.textos-grid {
+  max-width: 960px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 600px) {
+  .textos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* CARD */
+.texto-card {
+  padding: 1rem;
+  border-radius: 16px;
+  background: rgba(18, 4, 40, 0.95);
+  border: 1px solid rgba(203, 177, 255, 0.4);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.texto-card:hover {
+  transform: translateY(-3px);
+}
+
+.texto-card h3 {
+  margin-bottom: 0.4rem;
+}
+
+.preview {
+  font-size: 0.85rem;
+  color: #e6dcff;
+}
+
+/* FULLSCREEN TEXTO */
+.fullscreen-texto {
+  position: fixed;
+  inset: 0;
+
+  /* 🔥 FUNDO MAIS BONITO */
+  background: radial-gradient(
+    circle at top,
+    rgba(123, 60, 255, 0.25),
+    rgba(13, 2, 23, 0.95)
+  );
+
+  backdrop-filter: blur(6px);
+
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.2rem;
+}
+
+/* CONTAINER TEXTO */
+.texto-container {
+  max-width: 720px;
+  width: 100%;
+
+  /* 🔥 MAIS CLARO PRA LEITURA */
+  background: linear-gradient(
+    160deg,
+    rgba(35, 10, 70, 0.95),
+    rgba(18, 4, 40, 0.98)
+  );
+
+  border-radius: 20px;
+  padding: 1.8rem;
+
+  border: 1px solid rgba(203, 177, 255, 0.3);
+
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+
+  /* 🔥 SCROLL INTERNO */
+  max-height: 85vh;
+  overflow-y: auto;
+
+  animation: fadeIn 0.3s ease;
+}
+
+.texto-container h2 {
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  color: #ffb7f0;
+}
+
+.texto-container p {
+  font-size: 1rem;
+  line-height: 1.8;
+
+  /* 🔥 MAIS SUAVE PRO OLHO */
+  color: #f3e9ff;
+
+  white-space: pre-line;
+}
+
+/* FECHAR */
+.fechar {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+
+  font-size: 32px;
+  color: #ffffff;
+
+  cursor: pointer;
+
+  background: rgba(18, 4, 40, 0.8);
+  border-radius: 50%;
+  padding: 4px 10px;
+
+  transition: 0.2s;
+}
+
+.fechar:hover {
+  background: rgba(124, 71, 255, 0.9);
+  transform: scale(1.1);
+}
+
+/* ANIMAÇÃO */
+@keyframes fadeIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.texto-container {
+  scrollbar-width: thin;
+  scrollbar-color: #c26bff transparent;
+}
+
+.texto-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.texto-container::-webkit-scrollbar-thumb {
+  background: #c26bff;
+  border-radius: 10px;
+}

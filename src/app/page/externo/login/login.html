@@ -1,0 +1,41 @@
+<div class="page">
+  <div class="login-container">
+    <div class="login-header">
+      <h1>Nosso Login 💜</h1>
+      <p>Digite a senha secreta: a data do nosso namoro.</p>
+    </div>
+
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="senha">Senha (data)</label>
+
+        <div class="input-wrapper">s
+          <!-- Se quiser mostrar a data, troque type="password" para "text" -->
+          <input
+            type="password"
+            id="senha"
+            name="senha"
+            [(ngModel)]="senha"
+            placeholder="dd/mm/aaaa"
+            autocomplete="off"
+            required
+          />
+        </div>
+
+        <div class="hint">Ex: 05/06/2023</div>
+
+        <div class="error-message" *ngIf="errorMessage">
+          {{ errorMessage }}
+        </div>
+      </div>
+
+      <button type="submit" class="login-button">
+        Entrar
+      </button>     
+    </form>
+
+    <div class="footer-text">
+      Feito com <span class="heart">♥</span> só pra você
+    </div>
+  </div>
+</div>
