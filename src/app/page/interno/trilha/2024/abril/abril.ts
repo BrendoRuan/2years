@@ -26,46 +26,49 @@ interface QuizPerguntaMes {
   templateUrl: './abril.html',
   styleUrl: './abril.scss',
 })
-export class Abril {
-  
+export class Abril1 {
+    getValorPositivo(valor: number): number {
+  return Math.abs(valor);
+}
+
     // ====== TOPO ======
-    tituloMes = 'Mês 2 - Nosso começo';
-    textoTopo = 'O primeiro mês em que tudo parecia novidade e ao mesmo tempo tão certo.';
+    tituloMes = 'O inicio das aventuras...';
+    textoTopo = 'Bom... O que fala desses meses? Muitas novidades e descobertas, e foi aqui que eu descobre que o neném não é neném kkk. Foram dias maravilhosos, cheios de emoção ardentes e bastante euphoria pelo novo.';
   
     // ====== MIDIAS (FOTOS / VIDEOS) ======
     fotoDestaque: MidiaMes | null = {
-      url: 'assets/img/mes/2024-janeiro/IMG-20240127-WA0094.jpg',
-      legenda: 'Nosso primeiro registro especial.',
+      url: 'https://ik.imagekit.io/2Years/2024/2024-abril/IMG-20240428-WA0121.jpg?updatedAt=1773966712178',
+      legenda: 'A nossa escolha 🤍',
       tipo: 'foto'
     };
   
     fotosMes: MidiaMes[] = [
       {
-        url: 'https://drive.proton.me/u/0/liPn_V3eLXOkDijJWy529Otv65DolT2VZQltb2ZNQZIZoPmcvhIeFOm1gU04cVtRgYfhje9U8ph--rYCgUGtNA==/file/rWxsK0qsaHBaBgby-XjQGdevOp8cN_KQpH7-Kovkes1RypTpqTzhWMkmChhQNxkgCB1CmE888tzKzbWBmZffXA==',
-        legenda: 'Foto 1 do mês 2',
+        url: 'https://ik.imagekit.io/2Years/2024/2024-abril/IMG-20240426-WA0142.jpg?updatedAt=1773966714064',
+        legenda: 'Olha o biquinho',
         tipo: 'foto'
       },
       {
-        url: 'https://res.cloudinary.com/dhehoubf2/video/upload/v1773942219/VID-20240324-WA0093_flohi9.mp4',
-        legenda: 'Nosso momento engraçado 😂',
-        tipo: 'video'
+        url: 'https://ik.imagekit.io/2Years/2024/2024-abril/IMG-20240413-WA0119.jpg?updatedAt=1773966712640',
+        legenda: 'chiqueza é o lema',
+        tipo: 'foto'
       },
       {
-        url: 'https://ik.imagekit.io/2Years/2024/2024-abril/IMG-20240428-WA0114.jpg',
-        legenda: 'Foto 3 do mês 1',
+        url: 'https://ik.imagekit.io/2Years/2024/2024-abril/IMG-20240426-WA0126.jpg?updatedAt=1773966713345',
+        legenda: 'O sorriso do nega sempre foi bonito!!',
         tipo: 'foto'
       }
     ];
   
     // ====== QUIZ (MINI-GAME) ======
     quiz: QuizPerguntaMes = {
-      pergunta: 'Onde foi o nosso primeiro encontro?',
+      pergunta: 'Quem Gosta, mas não admite?',
       opcoes: [
-        { texto: 'Na frente da escola', pontos: -10 },
-        { texto: 'No shopping', pontos: 20 },
-        { texto: 'Na praça', pontos: 30 },
-        { texto: 'Na parada de ônibus', pontos: 40 },
-        { texto: 'Na sua casa', pontos: 50 }
+        { texto: 'Brendo', pontos: -5 },
+        { texto: 'Suellen', pontos: 5 },
+        { texto: 'nenhum', pontos: -5 },
+        { texto: 'Ambos', pontos: -5 },
+        { texto: 'Meia Altura', pontos: 5 }
       ]
     };
   
@@ -104,7 +107,7 @@ export class Abril {
   
       this.gameProgress.addPontos(this.pontosDesteMes);
   
-      this.router.navigate(['page/interno/home']);
+      this.router.navigate(['page/interno/trilha/2024/setembro1']);
     }
   
     voltarHome(): void {

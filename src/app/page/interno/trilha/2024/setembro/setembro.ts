@@ -26,46 +26,49 @@ interface QuizPerguntaMes {
   templateUrl: './setembro.html',
   styleUrl: './setembro.scss',
 })
-export class Setembro {
+export class Setembro1 {
   
+   getValorPositivo(valor: number): number {
+  return Math.abs(valor);
+}
   // ====== TOPO ======
-  tituloMes = 'Mês 1 - Nosso começo';
-  textoTopo = 'O primeiro mês em que tudo parecia novidade e ao mesmo tempo tão certo.';
+  tituloMes = 'Os Primeiros Conflitos...';
+  textoTopo = 'Lembro como se fosse ontem, a primeira vez que fiquie verdadeiramente triste com você... Foi no momento que me acusou de algo que não fiz, por ingluência de outras pessoas. Aquilo me revoltou por dentro, e depois deste acontecimento, as coisas nunca mais foram as mesmas... Brigas e Desentedimento fazia parte da rotina! O afastamento um do outro e a frieza espiritual so crescia...';
 
   // ====== MIDIAS (FOTOS / VIDEOS) ======
   fotoDestaque: MidiaMes | null = {
-    url: 'assets/img/mes/2024-janeiro/IMG-20240127-WA0094.jpg',
-    legenda: 'Nosso primeiro registro especial.',
+    url: 'https://ik.imagekit.io/2Years/2024/2024-setembro/IMG-20240127-WA0094-COLLAGE.jpg?updatedAt=1773966715260',
+    legenda: 'Retroespectiva do ano.',
     tipo: 'foto'
   };
 
   fotosMes: MidiaMes[] = [
     {
-      url: 'https://drive.proton.me/u/0/liPn_V3eLXOkDijJWy529Otv65DolT2VZQltb2ZNQZIZoPmcvhIeFOm1gU04cVtRgYfhje9U8ph--rYCgUGtNA==/file/rWxsK0qsaHBaBgby-XjQGdevOp8cN_KQpH7-Kovkes1RypTpqTzhWMkmChhQNxkgCB1CmE888tzKzbWBmZffXA==',
-      legenda: 'Foto 1 do mês 1',
+      url: 'https://ik.imagekit.io/2Years/2024/2024-setembro/20240912220201667.jpg?updatedAt=1773966713922',
+      legenda: 'Uma linda adoradora e futura dirigente 🔥',
       tipo: 'foto'
     },
     {
-      url: 'https://res.cloudinary.com/dhehoubf2/video/upload/v1773942219/VID-20240324-WA0093_flohi9.mp4',
-      legenda: 'Nosso momento engraçado 😂',
-      tipo: 'video'
+      url: 'https://ik.imagekit.io/2Years/2024/2024-setembro/20240907213912562.jpg?updatedAt=1773966714600',
+      legenda: 'Sempre bem vestidos, gracas a Deus!!',
+      tipo: 'foto'
     },
     {
-      url: 'https://ik.imagekit.io/2Years/2024/2024-abril/IMG-20240428-WA0114.jpg',
-      legenda: 'Foto 3 do mês 1',
+      url: 'https://ik.imagekit.io/2Years/2024/2024-setembro/20240907213929552.jpg?updatedAt=1773966714495',
+      legenda: 'Só não podia faltar aquela foto pegando a moral comigo né',
       tipo: 'foto'
     }
   ];
 
   // ====== QUIZ (MINI-GAME) ======
   quiz: QuizPerguntaMes = {
-    pergunta: 'Onde foi o nosso primeiro encontro?',
+    pergunta: 'Quem cresceu, mas so fez crescer o cabelo ?',
     opcoes: [
-      { texto: 'Na frente da escola', pontos: -10 },
-      { texto: 'No shopping', pontos: 20 },
-      { texto: 'Na praça', pontos: 30 },
-      { texto: 'Na parada de ônibus', pontos: 40 },
-      { texto: 'Na sua casa', pontos: 50 }
+      { texto: 'Brendo', pontos: -5 },
+      { texto: 'Suellen', pontos: 5 },
+      { texto: 'Nenhum', pontos: -5 },
+      { texto: 'Ambos', pontos: -5 },
+      { texto: 'Aquela de pouca altura', pontos: 5 }
     ]
   };
 
@@ -104,7 +107,7 @@ export class Setembro {
 
     this.gameProgress.addPontos(this.pontosDesteMes);
 
-    this.router.navigate(['page/interno/home']);
+    this.router.navigate(['page/interno/trilha/2024/dezembro1']);
   }
 
   voltarHome(): void {

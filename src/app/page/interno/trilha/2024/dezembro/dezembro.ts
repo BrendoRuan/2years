@@ -26,46 +26,62 @@ interface QuizPerguntaMes {
   templateUrl: './dezembro.html',
   styleUrl: './dezembro.scss',
 })
-export class Dezembro {
-  
+export class Dezembro1 {
+   getValorPositivo(valor: number): number {
+  return Math.abs(valor);
+}
   // ====== TOPO ======
-  tituloMes = 'Mês 1 - Nosso começo';
-  textoTopo = 'O primeiro mês em que tudo parecia novidade e ao mesmo tempo tão certo.';
-
+  tituloMes = 'Primeiro Final de Ano Juntos...';
+  textoTopo = 'Assimm como foi a chegado do nosso primeiro mês, o primeiro final de ano juntos também foi algo marcante... Ficamnos juntos até altas horas no natal, e ficamos quase dois dias inteiro junto no ano novo, lembro que você tava bestinha kkk, foi ali também que tudo foi mudando pra nós, seus pais(sua mâe kkk) começaram a me enxerga com outros olhos, que nos permitiu passar mais tempos juntos...';
   // ====== MIDIAS (FOTOS / VIDEOS) ======
   fotoDestaque: MidiaMes | null = {
-    url: 'assets/img/mes/2024-janeiro/IMG-20240127-WA0094.jpg',
-    legenda: 'Nosso primeiro registro especial.',
+    url: 'https://ik.imagekit.io/2Years/2024/2024-dezembro/IMG_0399.HEIC?updatedAt=1773966717484',
+    legenda: 'Primeiro ano novo Juntos!!',
     tipo: 'foto'
   };
 
   fotosMes: MidiaMes[] = [
     {
-      url: 'https://drive.proton.me/u/0/liPn_V3eLXOkDijJWy529Otv65DolT2VZQltb2ZNQZIZoPmcvhIeFOm1gU04cVtRgYfhje9U8ph--rYCgUGtNA==/file/rWxsK0qsaHBaBgby-XjQGdevOp8cN_KQpH7-Kovkes1RypTpqTzhWMkmChhQNxkgCB1CmE888tzKzbWBmZffXA==',
-      legenda: 'Foto 1 do mês 1',
+      url: 'https://ik.imagekit.io/2Years/2024/2024-outubro/20241017072108446.jpg?updatedAt=1773966714824',
+      legenda: 'Não me deixa quieto',
       tipo: 'foto'
     },
     {
-      url: 'https://res.cloudinary.com/dhehoubf2/video/upload/v1773942219/VID-20240324-WA0093_flohi9.mp4',
-      legenda: 'Nosso momento engraçado 😂',
-      tipo: 'video'
+      url: 'https://ik.imagekit.io/2Years/2024/2024-dezembro/IMG_0313.HEIC?updatedAt=1773966717058',
+      legenda: 'Sempre tirando fotos',
+      tipo: 'foto'
     },
     {
-      url: 'https://ik.imagekit.io/2Years/2024/2024-abril/IMG-20240428-WA0114.jpg',
-      legenda: 'Foto 3 do mês 1',
+      url: 'https://ik.imagekit.io/2Years/2024/2024-dezembro/CF19A9FF-DBB1-4B21-B6EA-0E891AAF4404.jpg?updatedAt=1773966714507',
+      legenda: 'Charmosos é pouco',
+      tipo: 'foto'
+    },
+     {
+      url: 'https://ik.imagekit.io/2Years/2024/2024-dezembro/99A90037-A267-4005-9DA5-4F8E7878E7CC.jpg?updatedAt=1773966713936',
+      legenda: 'Niver de David',
+      tipo: 'foto'
+    },
+    {
+      url: 'https://ik.imagekit.io/2Years/2024/2024-dezembro/9D15AAD5-17F0-42F0-B40D-55EFF53B3400.jpg?updatedAt=1773966713655',
+      legenda: 'Que Love Em...',
+      tipo: 'foto'
+    },
+    {
+      url: 'https://ik.imagekit.io/2Years/2024/2024-dezembro/59C4BA6A-D8E0-42E1-91E0-A9395C1BF854.jpg?updatedAt=1773966713506',
+      legenda: 'fala das garrinha dela kkk',
       tipo: 'foto'
     }
   ];
 
   // ====== QUIZ (MINI-GAME) ======
   quiz: QuizPerguntaMes = {
-    pergunta: 'Onde foi o nosso primeiro encontro?',
+    pergunta: 'Com quem luiza estava no final desse ano ?',
     opcoes: [
-      { texto: 'Na frente da escola', pontos: -10 },
-      { texto: 'No shopping', pontos: 20 },
-      { texto: 'Na praça', pontos: 30 },
-      { texto: 'Na parada de ônibus', pontos: 40 },
-      { texto: 'Na sua casa', pontos: 50 }
+      { texto: 'Samuel', pontos: -5 },
+      { texto: 'Roberto', pontos: 5 },
+      { texto: 'Thiago', pontos: -5 },
+      { texto: 'Nehum', pontos: -5 },
+      { texto: 'Todos', pontos: -10 }
     ]
   };
 
@@ -104,7 +120,7 @@ export class Dezembro {
 
     this.gameProgress.addPontos(this.pontosDesteMes);
 
-    this.router.navigate(['page/interno/home']);
+    this.router.navigate(['page/interno/trilha/2025/janeiro1']);
   }
 
   voltarHome(): void {

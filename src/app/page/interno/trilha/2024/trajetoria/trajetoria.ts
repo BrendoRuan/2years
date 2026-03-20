@@ -27,45 +27,63 @@ interface QuizPerguntaMes {
   styleUrl: './trajetoria.scss',
 })
 export class Trajetoria {
+  getValorPositivo(valor: number): number {
+  return Math.abs(valor);
+}
 
   // ====== TOPO ======
-  tituloMes = 'Mês 1 - Nosso começo';
-  textoTopo = 'O primeiro mês em que tudo parecia novidade e ao mesmo tempo tão certo.';
+  tituloMes = 'Janeiro de 2024 - Nosso começo';
+  textoTopo = 'És aqui um começo... Um prolongo do que viria em dois anos... Dois anos cheios de descobertas, alegrias, desafios, alto e baixos... E muito Amor! Na época, nem pensava em ter alguém, tão pouco entrar em compromisso com uma pessoa. Porém... És que surje uma pequena, bem pequenina varoa, e com seu sorriso majestoso fez meu coração voltar a palpitar de emoção. E foi assim que tudo começou...';
 
   // ====== MIDIAS (FOTOS / VIDEOS) ======
   fotoDestaque: MidiaMes | null = {
-    url: 'assets/img/mes/2024-janeiro/IMG-20240127-WA0094.jpg',
-    legenda: 'Nosso primeiro registro especial.',
+    url: 'https://ik.imagekit.io/2Years/2024/2024-janeiro/IMG-20240127-WA0094.jpg?updatedAt=1773966712719',
+    legenda: 'O primeiro registro de vários, vários, vários, vários outros muitos, muitos, muitos que viriam...',
     tipo: 'foto'
   };
 
   fotosMes: MidiaMes[] = [
     {
-      url: 'https://drive.proton.me/u/0/liPn_V3eLXOkDijJWy529Otv65DolT2VZQltb2ZNQZIZoPmcvhIeFOm1gU04cVtRgYfhje9U8ph--rYCgUGtNA==/file/rWxsK0qsaHBaBgby-XjQGdevOp8cN_KQpH7-Kovkes1RypTpqTzhWMkmChhQNxkgCB1CmE888tzKzbWBmZffXA==',
-      legenda: 'Foto 1 do mês 1',
+      url: 'https://ik.imagekit.io/2Years/2024/2024-janeiro/IMG-20240127-WA0094.jpg?updatedAt=1773966712719',
+      legenda: 'Nosso primeiro registro especial.',
       tipo: 'foto'
     },
     {
-      url: 'https://res.cloudinary.com/dhehoubf2/video/upload/v1773942219/VID-20240324-WA0093_flohi9.mp4',
-      legenda: 'Nosso momento engraçado 😂',
-      tipo: 'video'
+      url: 'https://ik.imagekit.io/2Years/2024/2024-fevereiro/IMG-20240310-WA0094.jpg?updatedAt=1773966711742',
+      legenda: 'Um lindo casal de azul!!',
+      tipo: 'foto'
     },
     {
-      url: 'https://ik.imagekit.io/2Years/2024/2024-abril/IMG-20240428-WA0114.jpg',
-      legenda: 'Foto 3 do mês 1',
+      url: 'https://ik.imagekit.io/2Years/2024/2024-fevereiro/IMG-20240325-WA0117.jpg?updatedAt=1773966713009',
+      legenda: 'A minha Preferida!!',
+      tipo: 'foto'
+    },
+     {
+      url: 'https://ik.imagekit.io/2Years/2024/2024-marco/IMG-20240212-WA0050.jpg?updatedAt=1773966712737',
+      legenda: 'Sempre foi gamadinha no varão kkk',
+      tipo: 'foto'
+    },
+    {
+      url: 'https://ik.imagekit.io/2Years/2024/2024-marco/IMG-20240211-WA0086.jpg?updatedAt=1773966712517',
+      legenda: 'Pegando uma Moral com este nego lindo aqui 😎',
+      tipo: 'foto'
+    },
+    {
+      url: 'https://ik.imagekit.io/2Years/2024/2024-marco/IMG-20240213-WA0038.jpg?updatedAt=1773966712778',
+      legenda: 'Primeiro Simpósio juntos...',
       tipo: 'foto'
     }
   ];
 
   // ====== QUIZ (MINI-GAME) ======
   quiz: QuizPerguntaMes = {
-    pergunta: 'Onde foi o nosso primeiro encontro?',
+    pergunta: 'Quem foi o primeiro a se interessar pelo outro?',
     opcoes: [
-      { texto: 'Na frente da escola', pontos: -10 },
-      { texto: 'No shopping', pontos: 20 },
-      { texto: 'Na praça', pontos: 30 },
-      { texto: 'Na parada de ônibus', pontos: 40 },
-      { texto: 'Na sua casa', pontos: 50 }
+      { texto: 'Suellen', pontos: 5},
+      { texto: 'Brendo(O ++)', pontos: -5},
+      { texto: 'nenhum', pontos: -5 },
+      { texto: 'Ambos', pontos: -5 },
+      { texto: 'A primeira opção', pontos: 5 }
     ]
   };
 

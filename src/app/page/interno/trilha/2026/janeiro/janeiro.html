@@ -1,1 +1,121 @@
-<p>janeiro works!</p>
+<div class="trajetoria-page">
+  <header class="topo">
+    <button type="button" class="btn-voltar" (click)="voltarHome()">
+      ← Voltar para Home
+    </button>
+
+    <h1>{{ tituloMes }}</h1>
+    <p class="texto-topo">
+      {{ textoTopo }}
+    </p>
+  </header>
+
+  <!-- Destaque do mês -->
+  <section class="destaque" *ngIf="fotoDestaque">
+    <div
+      class="destaque-img-wrapper"
+      (click)="fotoDestaque.tipo === 'foto' && abrirImagem(fotoDestaque.url)"
+    >
+
+      <!-- FOTO -->
+      <img
+        *ngIf="fotoDestaque.tipo === 'foto'"
+        [src]="fotoDestaque.url"
+        [alt]="fotoDestaque.legenda"
+      />
+
+      <!-- VIDEO -->
+      <video
+        *ngIf="fotoDestaque.tipo === 'video'"
+        controls
+      >
+        <source [src]="fotoDestaque.url" type="video/mp4" />
+      </video>
+
+      <div class="destaque-overlay"></div>
+
+      <div class="destaque-legenda">
+        <p>{{ fotoDestaque.legenda }}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Todas as mídias do mês -->
+  <section class="fotos-mes" *ngIf="fotosMes.length > 0">
+    <h2>Momentos desse mês</h2>
+
+    <div class="fotos-grid">
+      <div class="foto-card" *ngFor="let foto of fotosMes">
+
+        <!-- FOTO -->
+        <img
+          *ngIf="foto.tipo === 'foto'"
+          [src]="foto.url"
+          [alt]="foto.legenda"
+          (click)="abrirImagem(foto.url)"
+        />
+
+        <!-- VIDEO -->
+        <video
+          *ngIf="foto.tipo === 'video'"
+          controls
+        >
+          <source [src]="foto.url" type="video/mp4" />
+        </video>
+
+        <p>{{ foto.legenda }}</p>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Mini-game no final -->
+  <section class="quiz-section">
+    <h2>Mini-game do mês</h2>
+
+    <p class="quiz-pergunta">
+      {{ quiz.pergunta }}
+    </p>
+
+    <div class="quiz-opcoes">
+      <button
+        type="button"
+        class="quiz-opcao"
+        *ngFor="let opcao of quiz.opcoes; let i = index"
+        (click)="responderQuiz(i)"
+        [disabled]="quizRespondido"
+        [class.selecionada]="i === opcaoSelecionadaIndex"
+      >
+        <span class="quiz-texto">{{ opcao.texto }}</span>
+        <span class="quiz-pontos">+{{ opcao.pontos }} pts</span>
+      </button>
+    </div>
+
+    <p class="quiz-feedback" *ngIf="quizFeedback">
+      {{ quizFeedback }}
+    </p>
+
+    <div class="quiz-actions">
+      <button
+        type="button"
+        class="btn-proximo"
+        (click)="irParaProximoMes()"
+      >
+        Ir para o próximo mês →
+      </button>
+    </div>
+  </section>
+</div>
+
+<!-- LIGHTBOX (apenas fotos) -->
+<div class="lightbox" *ngIf="imagemAberta" (click)="fecharImagem()">
+
+  <span class="lightbox-fechar">✕</span>
+
+  <img
+    class="lightbox-img"
+    [src]="imagemAberta"
+    (click)="$event.stopPropagation()"
+  />
+
+</div>

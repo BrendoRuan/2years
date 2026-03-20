@@ -27,19 +27,37 @@ slides: Slide[] = [
   {
     titulo: 'Nosso Início',
     descricao: 'O dia em que tudo começou 💜',
-    url: 'assets/img/mes/2024-janeiro/IMG-20240127-WA0094.jpg',
+    url: 'https://ik.imagekit.io/2Years/2024/2024-janeiro/IMG-20240127-WA0094.jpg?updatedAt=1773966712719',
     tipo: 'foto'
   },
   {
     titulo: 'Primeiro Encontro',
-    descricao: 'Olha esse momento kkkkk 😂',
-    url: 'assets/img/mes/2024-janeiro/VID-20240125-WA0086.mp4',
-    tipo: 'video'
+    descricao: 'Eu que tive a ideia da foto e foi uma das melhores até hojeeeee',
+    url: 'https://ik.imagekit.io/2Years/2024/2024-fevereiro/IMG-20240325-WA0117.jpg?updatedAt=1773966713009',
+    tipo: 'foto'
   },
   {
     titulo: 'Dois Anos de Nós',
-    descricao: 'Dois anos de história ❤️',
-    url: 'assets/img/momentos/dois-anos.jpg',
+    descricao: 'Muito Love',
+    url: 'https://ik.imagekit.io/2Years/2024/2024-fevereiro/IMG-20240325-WA0117.jpg?updatedAt=1773966713009',
+    tipo: 'foto'
+  },
+    {
+    titulo: 'Nosso Início',
+    descricao: 'Sempre foi gamadinha no varão kkk',
+    url: 'https://ik.imagekit.io/2Years/2024/2024-marco/IMG-20240212-WA0050.jpg?updatedAt=1773966712737',
+    tipo: 'foto'
+  },
+  {
+    titulo: 'Fotão',
+    descricao: 'Pegando uma Moral com este nego lindo aqui 😎',
+    url: 'https://ik.imagekit.io/2Years/2024/2024-marco/IMG-20240211-WA0086.jpg?updatedAt=1773966712517',
+    tipo: 'foto'
+  },
+  {
+    titulo: 'Fotão',
+    descricao: 'Primeiro Simpósio juntos...',
+    url: 'https://ik.imagekit.io/2Years/2024/2024-marco/IMG-20240213-WA0038.jpg?updatedAt=1773966712778',
     tipo: 'foto'
   }
 ];
