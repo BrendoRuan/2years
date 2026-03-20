@@ -42,7 +42,7 @@ export class Abril {
     fotosMes: MidiaMes[] = [
       {
         url: 'https://drive.proton.me/u/0/liPn_V3eLXOkDijJWy529Otv65DolT2VZQltb2ZNQZIZoPmcvhIeFOm1gU04cVtRgYfhje9U8ph--rYCgUGtNA==/file/rWxsK0qsaHBaBgby-XjQGdevOp8cN_KQpH7-Kovkes1RypTpqTzhWMkmChhQNxkgCB1CmE888tzKzbWBmZffXA==',
-        legenda: 'Foto 1 do mês 1',
+        legenda: 'Foto 1 do mês 2',
         tipo: 'foto'
       },
       {
