@@ -122,7 +122,7 @@ export class Trajetoria {
 
     this.gameProgress.addPontos(this.pontosDesteMes);
 
-    this.router.navigate(['page/interno/trilha/2024/abril']);
+    this.router.navigate(['page/interno/trilha/2024/abril1']);
   }
 
   voltarHome(): void {
