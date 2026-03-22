@@ -6,7 +6,6 @@ import { Galeria } from './page/interno/galeria/galeria';
 import { Textos } from './page/interno/textos/textos';
 import { Surpresa } from './page/surpresa/surpresa/surpresa';
 import { Fevereiro } from './page/interno/trilha/2026/fevereiro/fevereiro';
-import { Marco } from './page/interno/trilha/2026/marco/marco';
 import { Janeiro1 } from './page/interno/trilha/2025/janeiro/janeiro';
 import { Janeiro } from './page/interno/trilha/2026/janeiro/janeiro';
 import { Abril1 } from './page/interno/trilha/2024/abril/abril';
@@ -33,8 +32,5 @@ export const routes: Routes = [
     {path:'page/interno/trilha/2025/abril', component: Abril},
     {path:'page/interno/trilha/2025/setembro', component: Setembro},
     {path:'page/interno/trilha/2026/janeiro', component: Janeiro},
-    {path:'page/interno/trilha/2026/fevereiro', component: Fevereiro},
-    {path:'page/interno/trilha/2026/marco', component: Marco}
-
-
+    {path:'page/interno/trilha/2026/fevereiro', component: Fevereiro}
 ];

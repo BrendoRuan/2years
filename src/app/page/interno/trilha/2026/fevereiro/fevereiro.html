@@ -87,7 +87,7 @@
         [class.selecionada]="i === opcaoSelecionadaIndex"
       >
         <span class="quiz-texto">{{ opcao.texto }}</span>
-        <span class="quiz-pontos">+{{ opcao.pontos }} pts</span>
+        <span class="quiz-pontos">{{ getValorPositivo(opcao.pontos) }} pts</span>
       </button>
     </div>
 

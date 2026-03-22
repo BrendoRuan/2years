@@ -27,44 +27,61 @@ interface QuizPerguntaMes {
 })
 export class Setembro {
 
+     getValorPositivo(valor: number): number {
+  return Math.abs(valor);
+}
   // ====== TOPO ======
-  tituloMes = 'Mês 1 - Nosso começo';
-  textoTopo = 'O primeiro mês em que tudo parecia novidade e ao mesmo tempo tão certo.';
+  tituloMes = 'O Início do Amor Verdadeiro...';
+  textoTopo = 'A cada dia que passava... Eu percebia mais e mais que eu tinha encontrado a minha pessoa, a minha melhor amiga, a minha parceira, a minha companheira, a minha namorada, a minha love, a minha vida... E que eu queria passar o resto da minha vida ao lado dela... E que eu faria de tudo pra ser feliz ao lado dela... E que eu faria de tudo pra fazer ela feliz... E que eu faria de tudo pra cuidar dela... E que eu faria de tudo pra proteger ela... E que eu faria de tudo pra amar ela... E que eu faria de tudo pra ser amado por ela... Enfim... Eu só queria viver um amor recíproco e verdadeiro com ela, e foi isso que encontrei!!';
 
   // ====== MIDIAS (FOTOS / VIDEOS) ======
   fotoDestaque: MidiaMes | null = {
-    url: 'assets/img/mes/2024-janeiro/IMG-20240127-WA0094.jpg',
-    legenda: 'Nosso primeiro registro especial.',
+    url: 'https://ik.imagekit.io/2Years/2025/2025-setembro/IMG_4301.JPG?updatedAt=1773967662052',
+    legenda: 'Nem nega que é gamada no neguinho bom aqui!!',
     tipo: 'foto'
   };
 
   fotosMes: MidiaMes[] = [
     {
-      url: 'https://drive.proton.me/u/0/liPn_V3eLXOkDijJWy529Otv65DolT2VZQltb2ZNQZIZoPmcvhIeFOm1gU04cVtRgYfhje9U8ph--rYCgUGtNA==/file/rWxsK0qsaHBaBgby-XjQGdevOp8cN_KQpH7-Kovkes1RypTpqTzhWMkmChhQNxkgCB1CmE888tzKzbWBmZffXA==',
-      legenda: 'Foto 1 do mês 1',
+      url: 'https://ik.imagekit.io/2Years/2025/2025-setembro/IMG_4048.JPG?updatedAt=1773967646410',
+      legenda: 'Miinha tia das crianças!!',
       tipo: 'foto'
     },
     {
-      url: 'https://res.cloudinary.com/dhehoubf2/video/upload/v1773942219/VID-20240324-WA0093_flohi9.mp4',
-      legenda: 'Nosso momento engraçado 😂',
-      tipo: 'video'
+      url: 'https://ik.imagekit.io/2Years/2025/2025-setembro/IMG_4023.JPG?updatedAt=1773967632741',
+      legenda: 'Um amor por essa foto',
+      tipo: 'foto'
     },
     {
-      url: 'https://ik.imagekit.io/2Years/2024/2024-abril/IMG-20240428-WA0114.jpg',
-      legenda: 'Foto 3 do mês 1',
+      url: 'https://ik.imagekit.io/2Years/2025/2025-agosto/IMG_3258.JPG?updatedAt=1773967665536',
+      legenda: 'Minha Princesa...',
+      tipo: 'foto'
+    }, {
+      url: 'https://ik.imagekit.io/2Years/2025/2025-agosto/IMG_3185.JPG?updatedAt=1773967655860',
+      legenda: 'Eu e minha varoa serviremos ao Senhor!!',
+      tipo: 'foto'
+    },
+    {
+      url: 'https://ik.imagekit.io/2Years/2025/2025-julho/IMG_2993.JPG?updatedAt=1773967563685',
+      legenda: 'Meu dodói ',
+      tipo: 'foto'
+    },
+    {
+      url: 'https://ik.imagekit.io/2Years/2025/2025-julho/IMG_2876.JPG?updatedAt=1773967590354',
+      legenda: 'Já estou vendo nossa casa com 3 criancas correndo por ai',
       tipo: 'foto'
     }
   ];
 
   // ====== QUIZ (MINI-GAME) ======
   quiz: QuizPerguntaMes = {
-    pergunta: 'Onde foi o nosso primeiro encontro?',
+    pergunta: 'Quantos Filhos decidimos ter ?',
     opcoes: [
-      { texto: 'Na frente da escola', pontos: -10 },
-      { texto: 'No shopping', pontos: 20 },
-      { texto: 'Na praça', pontos: 30 },
-      { texto: 'Na parada de ônibus', pontos: 40 },
-      { texto: 'Na sua casa', pontos: 50 }
+      { texto: '1', pontos: -5 },
+      { texto: '2', pontos: 5 },
+      { texto: '3', pontos: 5 },
+      { texto: '4', pontos: -5 },
+      { texto: '5', pontos: -5 }
     ]
   };
 
@@ -103,7 +120,7 @@ export class Setembro {
 
     this.gameProgress.addPontos(this.pontosDesteMes);
 
-    this.router.navigate(['page/interno/trilha/2024/abril']);
+    this.router.navigate(['page/interno/trilha/2025/dezembro']);
   }
 
   voltarHome(): void {

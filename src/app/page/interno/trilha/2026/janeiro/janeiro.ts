@@ -27,45 +27,47 @@ interface QuizPerguntaMes {
   styleUrl: './janeiro.scss',
 })
 export class Janeiro {
-
+       getValorPositivo(valor: number): number {
+  return Math.abs(valor);
+}
   // ====== TOPO ======
-  tituloMes = 'Mês 1 - Nosso começo';
-  textoTopo = 'O primeiro mês em que tudo parecia novidade e ao mesmo tempo tão certo.';
+  tituloMes = 'A conversa que mudou tudo...';
+  textoTopo = 'Depois de uma conversa.., aquela conversa, tudo mudou e desde lá, estivemos vivendo dias maravilhosos...';
 
   // ====== MIDIAS (FOTOS / VIDEOS) ======
   fotoDestaque: MidiaMes | null = {
-    url: 'assets/img/mes/2024-janeiro/IMG-20240127-WA0094.jpg',
-    legenda: 'Nosso primeiro registro especial.',
+    url: 'https://ik.imagekit.io/2Years/2026/2026-janeiro/WhaApp%20Image%202026-03-09%20at%2023.39.06.jpeg?updatedAt=1773967964283',
+    legenda: 'O início de um ano maravilhoso e esperançoso',
     tipo: 'foto'
   };
 
   fotosMes: MidiaMes[] = [
     {
-      url: 'https://drive.proton.me/u/0/liPn_V3eLXOkDijJWy529Otv65DolT2VZQltb2ZNQZIZoPmcvhIeFOm1gU04cVtRgYfhje9U8ph--rYCgUGtNA==/file/rWxsK0qsaHBaBgby-XjQGdevOp8cN_KQpH7-Kovkes1RypTpqTzhWMkmChhQNxkgCB1CmE888tzKzbWBmZffXA==',
-      legenda: 'Foto 1 do mês 1',
+      url: 'https://ik.imagekit.io/2Years/2026/2026-janeiro/WhatsApp%20Image%202026-009%20at%2023.39.06.jpeg?updatedAt=1773967964145',
+      legenda: 'Primeiro culto jovem do ano!!',
       tipo: 'foto'
     },
     {
-      url: 'https://res.cloudinary.com/dhehoubf2/video/upload/v1773942219/VID-20240324-WA0093_flohi9.mp4',
-      legenda: 'Nosso momento engraçado 😂',
-      tipo: 'video'
+      url: 'https://ik.imagekit.io/2Years/2026/2026-janeiro/WhatsApp%20Image%202026--09%20at%2023.39.06.jpeg?updatedAt=1773967966327',
+      legenda: 'o cheirinho bom de sempre!',
+      tipo: 'foto'
     },
     {
-      url: 'https://ik.imagekit.io/2Years/2024/2024-abril/IMG-20240428-WA0114.jpg',
-      legenda: 'Foto 3 do mês 1',
+      url: 'https://ik.imagekit.io/2Years/2026/2026-janeiro/WhatsApp%20Image%202026-03-09%20at3.39.06.jpeg?updatedAt=1773967963230',
+      legenda: 'Nossas Mehores= fotos são assim lkkk',
       tipo: 'foto'
     }
   ];
 
   // ====== QUIZ (MINI-GAME) ======
   quiz: QuizPerguntaMes = {
-    pergunta: 'Onde foi o nosso primeiro encontro?',
+    pergunta: 'o que voce mais admira no seu nego?',
     opcoes: [
-      { texto: 'Na frente da escola', pontos: -10 },
-      { texto: 'No shopping', pontos: 20 },
-      { texto: 'Na praça', pontos: 30 },
-      { texto: 'Na parada de ônibus', pontos: 40 },
-      { texto: 'Na sua casa', pontos: 50 }
+      { texto: 'Sorriso', pontos: 5},
+      { texto: 'Corpo', pontos: 5 },
+      { texto: 'Braços', pontos: 5 },
+      { texto: 'Tudo', pontos: 5 },
+      { texto: 'Edo', pontos: 5}
     ]
   };
 
@@ -104,7 +106,7 @@ export class Janeiro {
 
     this.gameProgress.addPontos(this.pontosDesteMes);
 
-    this.router.navigate(['page/interno/trilha/2024/abril']);
+    this.router.navigate(['page/interno/trilha/2026/fevereiro']);
   }
 
   voltarHome(): void {

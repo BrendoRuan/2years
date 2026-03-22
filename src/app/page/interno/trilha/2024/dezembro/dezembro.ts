@@ -31,9 +31,9 @@ export class Dezembro1 {
   return Math.abs(valor);
 }
   // ====== TOPO ======
-  tituloMes = 'Primeiro Final de Ano Juntos...';
+ tituloMes = 'Primeiro Final de Ano Juntos...';
   textoTopo = 'Assimm como foi a chegado do nosso primeiro mês, o primeiro final de ano juntos também foi algo marcante... Ficamnos juntos até altas horas no natal, e ficamos quase dois dias inteiro junto no ano novo, lembro que você tava bestinha kkk, foi ali também que tudo foi mudando pra nós, seus pais(sua mâe kkk) começaram a me enxerga com outros olhos, que nos permitiu passar mais tempos juntos...';
-  // ====== MIDIAS (FOTOS / VIDEOS) ======
+   // ====== MIDIAS (FOTOS / VIDEOS) ======
   fotoDestaque: MidiaMes | null = {
     url: 'https://ik.imagekit.io/2Years/2024/2024-dezembro/IMG_0399.HEIC?updatedAt=1773966717484',
     legenda: 'Primeiro ano novo Juntos!!',

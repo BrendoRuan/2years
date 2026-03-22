@@ -28,44 +28,48 @@ interface QuizPerguntaMes {
 })
 export class Fevereiro {
 
+         getValorPositivo(valor: number): number {
+  return Math.abs(valor);
+}
+  
   // ====== TOPO ======
-  tituloMes = 'Mês 1 - Nosso começo';
-  textoTopo = 'O primeiro mês em que tudo parecia novidade e ao mesmo tempo tão certo.';
+  tituloMes = 'Um mês cheiro de maravilhas...';
+  textoTopo = 'Nossa primeira ida à praia juntos foi daquelas memórias que ficam guardadas com carinho pra sempre. O jeito que o tempo parecia mais leve, o som do mar misturado com nossas risadas… tudo simplesmente encaixava. 🌊✨E esses últimos dias têm sido assim também: leves, bons, cheios de pequenos momentos que fazem tudo valer a pena. Estar com você transforma qualquer lugar em algo especial. 💜';
 
   // ====== MIDIAS (FOTOS / VIDEOS) ======
   fotoDestaque: MidiaMes | null = {
-    url: 'assets/img/mes/2024-janeiro/IMG-20240127-WA0094.jpg',
-    legenda: 'Nosso primeiro registro especial.',
+    url: 'https://ik.imagekit.io/2Years/2026/2026-fevereiro/WhatsApp%20Image%202026-03-09%20at%20251.45.jpeg?updatedAt=1773967967334',
+    legenda: 'Nossa primeira praia juntos, e que dia maravilhoso foi aquele!!',
     tipo: 'foto'
   };
 
   fotosMes: MidiaMes[] = [
     {
-      url: 'https://drive.proton.me/u/0/liPn_V3eLXOkDijJWy529Otv65DolT2VZQltb2ZNQZIZoPmcvhIeFOm1gU04cVtRgYfhje9U8ph--rYCgUGtNA==/file/rWxsK0qsaHBaBgby-XjQGdevOp8cN_KQpH7-Kovkes1RypTpqTzhWMkmChhQNxkgCB1CmE888tzKzbWBmZffXA==',
-      legenda: 'Foto 1 do mês 1',
+      url: 'https://ik.imagekit.io/2Years/2026/2026-fevereiro/WhatsApp%20Image%202026-03-09%20at.51.45.jpeg?updatedAt=1773967965940',
+      legenda: 'Nada a declarar...',
       tipo: 'foto'
     },
     {
-      url: 'https://res.cloudinary.com/dhehoubf2/video/upload/v1773942219/VID-20240324-WA0093_flohi9.mp4',
-      legenda: 'Nosso momento engraçado 😂',
-      tipo: 'video'
+      url: 'https://ik.imagekit.io/2Years/2026/2026-fevereiro/WhatsApp%20Image%202026-039%20at%2023.51.44.jpeg?updatedAt=1773967964316',
+      legenda: 'Amo esse tipo de foto!!',
+      tipo: 'foto'
     },
     {
-      url: 'https://ik.imagekit.io/2Years/2024/2024-abril/IMG-20240428-WA0114.jpg',
-      legenda: 'Foto 3 do mês 1',
+      url: 'https://ik.imagekit.io/2Years/2026/2026-fevereiro/WhatsApp%20Image%202026-03-09%20at%20.51.40.jpeg?updatedAt=1773967965456',
+      legenda: 'Um casal lindo de se ver!!',
       tipo: 'foto'
     }
   ];
 
   // ====== QUIZ (MINI-GAME) ======
   quiz: QuizPerguntaMes = {
-    pergunta: 'Onde foi o nosso primeiro encontro?',
+    pergunta: 'Onde nos falamos pela primeira vez?',
     opcoes: [
-      { texto: 'Na frente da escola', pontos: -10 },
-      { texto: 'No shopping', pontos: 20 },
-      { texto: 'Na praça', pontos: 30 },
-      { texto: 'Na parada de ônibus', pontos: 40 },
-      { texto: 'Na sua casa', pontos: 50 }
+      { texto: 'Escola', pontos: -5 },
+      { texto: 'Igreja', pontos: 5 },
+      { texto: 'Instagram', pontos: 5},
+      { texto: 'WhatsApp', pontos: -5 },
+      { texto: 'Pessoalmente', pontos: 5 }
     ]
   };
 
@@ -104,7 +108,7 @@ export class Fevereiro {
 
     this.gameProgress.addPontos(this.pontosDesteMes);
 
-    this.router.navigate(['page/interno/trilha/2024/abril']);
+    this.router.navigate(['page/interno/home']);
   }
 
   voltarHome(): void {

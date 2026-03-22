@@ -56,7 +56,27 @@ fadeInAudio(audio: HTMLAudioElement) {
   slides = [
   { tipo: 'foto', url: 'assets/img/mes/2024-janeiro/IMG-20240127-WA0094.jpg' },
   { tipo: 'foto', url: 'assets/img/mes/2024-janeiro/IMG-20240127-WA0094.jpg' },
-  { tipo: 'video', url: 'assets/img/mes/2024-janeiro/VID-20240125-WA0086.mp4' }
+  { tipo: 'video', url: 'assets/img/mes/2024-janeiro/VID-20240125-WA0086.mp4' },
+   {
+      url: 'https://ik.imagekit.io/2Years/2026/2026-janeiro/WhatsApp%20Image%202026-009%20at%2023.39.06.jpeg?updatedAt=1773967964145',
+      tipo: 'foto'
+    },
+    {
+      url: 'https://ik.imagekit.io/2Years/2026/2026-janeiro/WhatsApp%20Image%202026--09%20at%2023.39.06.jpeg?updatedAt=1773967966327',
+      tipo: 'foto'
+    },
+    {
+      url: 'https://ik.imagekit.io/2Years/2026/2026-janeiro/WhatsApp%20Image%202026-03-09%20at3.39.06.jpeg?updatedAt=1773967963230',
+      tipo: 'foto'
+    },
+        {
+      url: 'https://ik.imagekit.io/2Years/2026/2026-fevereiro/WhatsApp%20Image%202026-03-09%20at.51.45.jpeg?updatedAt=1773967965940',
+      tipo: 'foto'
+    },
+    {
+      url: 'https://ik.imagekit.io/2Years/2026/2026-fevereiro/WhatsApp%20Image%202026-039%20at%2023.51.44.jpeg?updatedAt=1773967964316',
+      tipo: 'foto'
+    }
 ];
 
 index = 0;
