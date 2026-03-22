@@ -86,7 +86,6 @@
 .music-title {
   font-size: 13px;
   text-align: center;
-  transition: all 0.3s;
 }
 
 /* CONTROLES */
@@ -102,7 +101,6 @@
   font-size: 18px;
   color: white;
   cursor: pointer;
-  transition: transform 0.2s;
 }
 
 .controls button:hover {
@@ -123,7 +121,6 @@
   font-size: 12px;
   color: white;
   cursor: pointer;
-  transition: all 0.2s;
 }
 
 .btn-playlist:hover {
@@ -131,12 +128,12 @@
 }
 
 /* ===============================
-   PLAYLIST OVERLAY - DESKTOP
+   PLAYLIST DESKTOP
 =============================== */
 .playlist-overlay {
   position: fixed;
   top: 50%;
-  right: 230px; /* ao lado do player */
+  right: 230px;
   transform: translateY(-50%);
   width: 230px;
   max-height: 0;
@@ -163,7 +160,7 @@
   padding: 10px;
 }
 
-/* ITEM DA PLAYLIST */
+/* ITEM */
 .music-item {
   display: flex;
   align-items: center;
@@ -171,7 +168,6 @@
   padding: 6px;
   border-radius: 8px;
   cursor: pointer;
-  transition: all 0.2s;
 }
 
 .music-item img {
@@ -183,19 +179,18 @@
 .music-item span {
   color: white;
   font-size: 12px;
-  transition: color 0.2s;
 }
 
+/* HOVER */
 .music-item:hover {
   background: rgba(30,215,96,0.2);
 }
 
 .music-item:hover span {
   color: #1ed760;
-  font-weight: 500;
 }
 
-/* MÚSICA TOCANDO */
+/* ATIVO */
 .music-item.playing {
   background: rgba(30,215,96,0.3);
 }
@@ -206,9 +201,10 @@
 }
 
 /* ===============================
-   RESPONSIVO MOBILE
+   MOBILE (AGORA VERTICAL 🔥)
 =============================== */
 @media (max-width: 768px) {
+
   .music-player {
     bottom: 0;
     top: auto;
@@ -220,11 +216,10 @@
     justify-content: space-between;
     padding: 8px 10px;
     align-items: center;
-    transition: transform 0.35s ease;
   }
 
   .music-player.min {
-    width: 50px;
+    width: 60px;
   }
 
   .btn-toggle {
@@ -233,12 +228,6 @@
     transform: translateY(-50%);
     width: 35px;
     height: 35px;
-    font-size: 16px;
-  }
-
-  .music-cover {
-    width: 40px;
-    height: 40px;
   }
 
   .player-content {
@@ -247,6 +236,11 @@
     flex: 1;
     align-items: center;
     justify-content: space-between;
+  }
+
+  .music-cover {
+    width: 40px;
+    height: 40px;
   }
 
   .music-title {
@@ -260,53 +254,50 @@
     display: none;
   }
 
-  /* Playlist horizontal mobile, próxima do player com slide */
+  /* 🎯 PLAYLIST AGORA VERTICAL */
   .playlist-overlay {
-    bottom: 50px; /* distância do player */
+    position: fixed;
+    bottom: 60px;
     right: 0;
     width: 100%;
     max-height: 0;
-    flex-direction: row;
-    overflow-x: auto;
-    overflow-y: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: #121212;
+    flex-direction: column;
     border-top: 1px solid #2a2a2a;
-    border-left: none;
     border-radius: 20px 20px 0 0;
-    padding: 8px;
+    padding: 10px;
     z-index: 10001;
+
     transform: translateY(100%);
-    transition: transform 0.35s ease, max-height 0.35s ease, opacity 0.35s ease;
     opacity: 0;
+    transition: all 0.35s ease;
   }
 
   .playlist-overlay.open {
-    max-height: 120px;
+    max-height: 300px;
     transform: translateY(0);
     opacity: 1;
   }
 
   .playlist-content {
-    flex-direction: row;
-    gap: 8px;
-    z-index: 10002;
+    flex-direction: column;
+    gap: 10px;
   }
 
   .music-item {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    font-size: 10px;
-  }
-
-  .music-item img {
-    width: 35px;
-    height: 35px;
+    gap: 10px;
   }
 
   .music-item span {
-    text-align: center;
+    text-align: left;
+    font-size: 13px;
   }
 
-  /* Backdrop mobile atrás da playlist */
+  /* BACKDROP */
   .playlist-backdrop {
     display: block;
     position: fixed;
@@ -314,16 +305,15 @@
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 10000;
   }
 
-  /* PLAYER SOBE QUANDO PLAYLIST ABERTA */
+  /* PLAYER SOBE */
   .playlist-overlay.open ~ .music-player {
-    transform: translateY(-70px);
+    transform: translateY(-80px);
   }
 }
 
-/* FECHAR PLAYLIST QUANDO PLAYER MINIMIZADO */
+/* FECHAR PLAYLIST SE MINIMIZADO */
 .music-player.min + .playlist-overlay {
   max-height: 0 !important;
   opacity: 0 !important;
